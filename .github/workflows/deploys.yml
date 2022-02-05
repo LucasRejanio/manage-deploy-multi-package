@@ -8,8 +8,8 @@ on:
         required: true
 
 jobs:
-  if: contains(github.event.inputs.type, 'cloudflare')
   deploy-cloudflare:
+    if: contains(github.event.inputs.type, 'cloudflare')
     runs-on: ubuntu-20.04
 
     steps:
