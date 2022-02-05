@@ -14,3 +14,10 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+
+  deploy-s3:
+    if: contains(github.event.inputs.type, 's3')
+    runs-on: ubuntu-20.04
+
+    steps:
+      - uses: actions/checkout@v2
