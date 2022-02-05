@@ -12,5 +12,5 @@ jobs:
   deploy-cloudflare:
     runs-on: ubuntu-20.04
 
-     steps:
+    steps:
       - uses: actions/checkout@v2
