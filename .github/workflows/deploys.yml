@@ -9,6 +9,8 @@ on:
 
 jobs:
   config:
+    runs-on: ubuntu-20.04
+
     steps:
       - uses: actions/checkout@v2
 
@@ -17,7 +19,7 @@ jobs:
           echo "Get configuration file"
 
   deploy-cloudflare:
-    need: config
+    needs: config
     if: contains(github.event.inputs.type, 'cloudflare')
     runs-on: ubuntu-20.04
 
@@ -25,7 +27,7 @@ jobs:
       - uses: actions/checkout@v2
 
   deploy-s3:
-    need: config
+    needs: config
     if: contains(github.event.inputs.type, 's3')
     runs-on: ubuntu-20.04
 
