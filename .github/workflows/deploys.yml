@@ -1,0 +1,16 @@
+name: Deploys
+
+on:
+  workflow_dispatch:
+    inputs:
+      type:
+        description: 'type'
+        required: true
+
+jobs:
+  if: contains(github.event.inputs.type, 'cloudflare')
+  deploy-cloudflare:
+    runs-on: ubuntu-20.04
+
+     steps:
+      - uses: actions/checkout@v2
