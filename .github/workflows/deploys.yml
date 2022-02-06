@@ -26,13 +26,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - id: files
-        uses: jitterbit/get-changed-files@v1
-      - run: |
-          for changed_file in ${{ steps.files.outputs.all }}; do
-            echo "Do something with this ${changed_file}."
-          done
-
   deploy-s3:
     needs: config
     if: contains(github.event.inputs.type, 's3')
