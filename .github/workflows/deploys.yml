@@ -11,11 +11,8 @@ jobs:
   config:
     strategy:
       fail-fast: true
-      matrix:
-        os: [ubuntu-latest]
-        node: [16]
 
-    runs-on: ${{ matrix.os }}
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
@@ -26,7 +23,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: ${{ matrix.node }}
+          node-version: 16
           check-latest: true
 
       - name: Get yarn cache directory path
