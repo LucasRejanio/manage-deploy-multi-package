@@ -2,16 +2,16 @@ name: Deploys
 
 on:
   workflow_dispatch:
-    # inputs:
-    #   envionment:
-    #     description: 'Envionment'
-    #     required: true
-    #   bucket:
-    #     description: 'Bucket name'
-    #     required: true
-    #   package:
-    #     description: 'Package'
-    #     required: true
+    inputs:
+      envionment:
+        description: 'Envionment'
+        required: true
+      bucket:
+        description: 'Bucket name'
+        required: true
+      package:
+        description: 'Package'
+        required: true
     
 jobs:
   config:

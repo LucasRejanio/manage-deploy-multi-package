@@ -19,9 +19,9 @@ echo "=== Starting script to trigger s3 deploy with github actions ==="
 
 # Call actions to start deploy
 echo "Send request to trigger action"
-status_code=$(curl --write-out '%{http_code}' -u "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:" -X POST -H 'Accept: application/vnd.github.v3+json' \
+status_code=$(curl --write-out '%{http_code}' -u "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:" -X POST -H 'Accept: application/vnd.github.v3+json' \
 https://api.github.com/repos/LucasRejanio/manage-deploy-multi-package/actions/workflows/deploys.yml/dispatches \
--d '{"ref":"main"}')
+-d '{"ref":"main","inputs":{"envionment":"test","bucket":"test","package:test"}}')
 
 if [[ "$status_code" == 204 ]] ; then
     echo "$status_code Successful request"
