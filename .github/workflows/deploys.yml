@@ -6,6 +6,9 @@ on:
       environment:
         description: 'environment'
         required: true
+      bucket:
+        description: 'bucket'
+        required: true
     
 jobs:
   config:
