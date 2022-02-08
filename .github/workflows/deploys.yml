@@ -2,16 +2,16 @@ name: Deploys
 
 on:
   workflow_dispatch:
-    # inputs:
-    #   envionment:
-    #     description: 'Envionment'
-    #     required: true
-    #   bucket:
-    #     description: 'Bucket name'
-    #     required: true
-    #   package:
-    #     description: 'Package'
-    #     required: true
+    inputs:
+      envionment:
+        description: 'Envionment'
+        required: true
+      bucket:
+        description: 'Bucket name'
+        required: true
+      package:
+        description: 'Package'
+        required: true
     
 jobs:
   config:
@@ -25,6 +25,9 @@ jobs:
         uses: actions/checkout@v2
         with:
           fetch-depth: 0
+
+      - name: test
+        run: echo ${{ github.event.inputs.environment }}
 
       - name: Setup Node.js
         uses: actions/setup-node@v2
