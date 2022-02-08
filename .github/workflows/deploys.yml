@@ -3,8 +3,8 @@ name: Deploys
 on:
   workflow_dispatch:
     inputs:
-      envionment:
-        description: 'envionment'
+      environment:
+        description: 'environment'
         required: true
     
 jobs:
