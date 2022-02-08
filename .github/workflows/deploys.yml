@@ -4,13 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       envionment:
-        description: 'Envionment'
-        required: true
-      bucket:
-        description: 'Bucket name'
-        required: true
-      package:
-        description: 'Package'
+        description: 'envionment'
         required: true
     
 jobs:
