@@ -2,10 +2,6 @@ name: Deploys
 
 on:
   workflow_dispatch:
-    inputs:
-      type:
-        description: 'type'
-        required: true
 
 jobs:
   config:
@@ -38,19 +34,3 @@ jobs:
           key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
             ${{ runner.os }}-yarn-
-
-  deploy-cloudflare:
-    needs: config
-    if: contains(github.event.inputs.type, 'cloudflare')
-    runs-on: ubuntu-20.04
-
-    steps:
-      - uses: actions/checkout@v2
-
-  deploy-s3:
-    needs: config
-    if: contains(github.event.inputs.type, 's3')
-    runs-on: ubuntu-20.04
-
-    steps:
-      - uses: actions/checkout@v2
