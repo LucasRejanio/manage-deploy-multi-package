@@ -24,7 +24,9 @@ jobs:
           fetch-depth: 0
 
       - name: test
-        run: echo ${{ github.event.inputs.environment }} && echo ${{ github.event.inputs.bucket }}
+        run: |
+          echo ${{ github.event.inputs.environment }} \
+          && echo ${{ github.event.inputs.bucket }}
 
       - name: Setup Node.js
         uses: actions/setup-node@v2
